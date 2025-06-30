@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dành Tặng Cho cậu...</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script type="text/javascript" src="https://unpkg.com/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js"></script>
+</head>
+<body>
+    <div class="effect-container"></div> 
+    <audio id="background-music" loop>
+        <source src="audio/nen_nhac_tinh_yeu.mp3" type="audio/mpeg">
+        <source src="audio/nen_nhac_tinh_yeu.ogg" type="audio/ogg">
+        Trình duyệt của bạn không hỗ trợ thẻ audio.
+    </audio>
+
+    <audio id="whisper-music" loop>
+        <source src="audio/loi_thi_tham_music.mp3" type="audio/mpeg">
+        <source src="audio/loi_thi_tham_music.ogg" type="audio/ogg">
+        Trình duyệt của bạn không hỗ trợ thẻ audio.
+    </audio>
+
+    <button id="music-toggle-btn" class="music-toggle-button">
+        <i class="fas fa-music"></i>
+        <span class="status-text"> Bật Nhạc</span>
+    </button>
+    
+    <button id="whisper-button" class="whisper-button">
+        <i class="fas fa-envelope-open-text"></i> Đôi Lời Thì Thầm
+    </button>
+
+    <header class="hero-section">
+        <div class="hero-content fade-in">
+            <h1>Heloo cậu Thảo Linh</h1>
+            <p>Những tấm ảnh tui thấy cute nhất...</p>
+        </div>
+        <div class="background-shape shape-1"></div>
+        <div class="background-shape shape-2"></div>
+    </header>
+
+    <main>
+        <section class="gallery-section">
+            <div class="container">
+                <h2>Lê Thảo Linh</h2>
+                <div class="gallery-container">
+                    <div class="image-item fade-in-slide" data-tilt data-tilt-scale="1.05" data-message="Xinh lung linh luôn!" data-full-src="images/crush_1.jpg">
+                        <img src="images/crush_1.jpg" alt="Ảnh crush 1">
+                        <div class="overlay">
+                            <p class="message"></p>
+                        </div>
+                    </div>
+
+                    <div class="image-item fade-in-slide" data-tilt data-tilt-scale="1.05" data-message="WOWWWWWW." data-full-src="images/crush_2.jpg">
+                        <img src="images/crush_2.jpg" alt="Ảnh crush 2">
+                        <div class="overlay">
+                            <p class="message"></p>
+                        </div>
+                    </div>
+
+                    <div class="image-item fade-in-slide" data-tilt data-tilt-scale="1.05" data-message="So beautifull." data-full-src="images/crush_3.jpg">
+                        <img src="images/crush_3.jpg" alt="Ảnh crush 3">
+                        <div class="overlay">
+                            <p class="message"></p>
+                        </div>
+                    </div>
+
+                    <div class="image-item fade-in-slide" data-tilt data-tilt-scale="1.05" data-message="Cutee." data-full-src="images/crush_4.jpg">
+                        <img src="images/crush_4.jpg" alt="Ảnh crush 4">
+                        <div class="overlay">
+                            <p class="message"></p>
+                        </div>
+                    </div>
+
+                    <div class="image-item fade-in-slide" data-tilt data-tilt-scale="1.05" data-message="Đã thật á chớ ." data-full-src="images/crush_5.jpg">
+                        <img src="images/crush_5.jpg" alt="Ảnh crush 5">
+                        <div class="overlay">
+                            <p class="message"></p>
+                        </div>
+                    </div>
+                    <div class="image-item fade-in-slide" data-tilt data-tilt-scale="1.05" data-message="Ngắm mấy tiếng ròi chả thấy xinh chỗ nào." data-full-src="images/crush_6.jpg">
+                        <img src="images/crush_6.jpg" alt="Ảnh crush 6">
+                        <div class="overlay">
+                            <p class="message"></p>
+                        </div>
+                    </div>
+                    <div class="image-item fade-in-slide" data-tilt data-tilt-scale="1.05" data-message="Chịu đó hết từ để khen ròi." data-full-src="images/crush_7.jpg">
+                        <img src="images/crush_7.jpg" alt="Ảnh crush 7">
+                        <div class="overlay">
+                            <p class="message"></p>
+                        </div>
+                    </div>
+                    <div class="image-item fade-in-slide" data-tilt data-tilt-scale="1.05" data-message="Xinh đẹp tuỵt trần." data-full-src="images/crush_8.jpg">
+                        <img src="images/crush_8.jpg" alt="Ảnh crush 8">
+                        <div class="overlay">
+                            <p class="message"></p>
+                        </div>
+                    </div>
+                    <div class="image-item fade-in-slide" data-tilt data-tilt-scale="1.05" data-message="Xinh mất phần thiên hạ ròii." data-full-src="images/crush_9.jpg">
+                        <img src="images/crush_9.jpg" alt="Ảnh crush 9">
+                        <div class="overlay">
+                            <p class="message"></p>
+                        </div>
+                    </div>
+                       <div class="image-item fade-in-slide" data-tilt data-tilt-scale="1.05" data-message="ko khen xinh là dối lòng." data-full-src="images/crush_10.jpg">
+                        <img src="images/crush_10.jpg" alt="Ảnh crush 10">
+                        <div class="overlay">
+                            <p class="message"></p>
+                        </div>
+                    </div>
+                       <div class="image-item fade-in-slide" data-tilt data-tilt-scale="1.05" data-message="Xinh ri thì trách chi hoa nó hờn." data-full-src="images/crush_11.jpg">
+                        <img src="images/crush_11.jpg" alt="Ảnh crush 11">
+                        <div class="overlay">
+                            <p class="message"></p>
+                        </div>
+                    </div>
+                       <div class="image-item fade-in-slide" data-tilt data-tilt-scale="1.05" data-message="Mong cậu sẽ luôn giữ được sự vuoi vẻ như vậy mãi nhé ." data-full-src="images/crush_12.jpg">
+                        <img src="images/crush_12.jpg" alt="Ảnh crush 12">
+                        <div class="overlay">
+                            <p class="message"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer-section fade-in">
+        <p>&copy; By I, the one who likes you</p>
+    </footer>
+
+    <div id="image-popup" class="image-popup">
+        <span class="close-button image-popup-close-button">&times;</span>
+        <img class="popup-image" src="" alt="Ảnh chi tiết">
+        <p class="popup-message"></p>
+    </div>
+
+    <div id="whisper-popup" class="whisper-popup">
+        <div class="whisper-content">
+            <span class="close-button whisper-close-button">&times;</span>
+            <h3>Đôi Lời Thì Thầm Gửi Đến Cậu...</h3>
+            <div class="whisper-text">
+                <p>Hi Linh, khi tui làm cái này là coi như những lời tâm sự trong lòng của tôi muốn gửi đến cậu....</p>
+                <p>Thì trong khoảng thời gian vừa qua tui với cậu cũng nói chuyện với nhau khá nhiều và tui thấy mik khá hợp nhau ý.. .</p>
+                <p>Thế nên tui cũng muốn mqh này ko dừng ở bạn bè nữa mà tiến xa hơn thêm bước nữa .</p>
+                <p>Tui biết hiện tại tui vẫn còn nhiều thứ chưa hoàn thiện nhưng tui mong cậu cho tui cơ hội nhé  </p>
+                <P>Đó là những điều tui muốn nói và giờ tui chờ phản hồi từ cậu nhé va nếu cậu thấy không thích thì cũng ko sao cả ,tụi mik vẫn sẽ làm bạn bình thường thoi ha </P>
+                <p class="signature-whisper">kimbaoguicau ❤️</p>
+                </div>
+        </div>
+    </div>
+
+
+    <script>
+        // Khởi tạo Vanilla Tilt cho các phần tử có data-tilt
+        VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
+            max: 10,  // độ nghiêng tối đa
+            speed: 400, // tốc độ chuyển động
+            glare: true, // thêm hiệu ứng lóa sáng
+            "max-glare": 0.5 // độ lóa tối đa
+        });
+
+        // =========================================================================
+        // Hiệu ứng Fade-in và Slide-in khi cuộn
+        // =========================================================================
+        document.addEventListener('DOMContentLoaded', () => {
+            const faders = document.querySelectorAll('.fade-in');
+            const fadeSlideElements = document.querySelectorAll('.fade-in-slide');
+
+            const appearOptions = {
+                threshold: 0.1 // Phần trăm yếu tố cần nhìn thấy để kích hoạt
+            };
+
+            const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        return;
+                    } else {
+                        entry.target.classList.add('appear');
+                        appearOnScroll.unobserve(entry.target);
+                    }
+                });
+            }, appearOptions);
+
+            faders.forEach(fader => {
+                appearOnScroll.observe(fader);
+            });
+
+            fadeSlideElements.forEach((el, index) => {
+                el.style.transitionDelay = `${index * 0.12}s`; // Điều chỉnh delay tăng dần cho mỗi item
+                appearOnScroll.observe(el);
+            });
+        });
+
+        // =========================================================================
+        // Xử lý Pop-up Ảnh chi tiết (gallery)
+        // =========================================================================
+        const imageItems = document.querySelectorAll('.image-item');
+        const imagePopup = document.getElementById('image-popup');
+        const popupImage = document.querySelector('.popup-image');
+        const popupMessage = document.querySelector('.popup-message');
+        const imagePopupCloseButton = imagePopup.querySelector('.close-button'); 
+
+        imageItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const imgSrc = item.dataset.fullSrc || item.querySelector('img').src;
+                const message = item.dataset.message;
+
+                popupImage.src = imgSrc;
+                popupMessage.textContent = message;
+                imagePopup.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Ngăn cuộn trang
+            });
+        });
+
+        imagePopupCloseButton.addEventListener('click', () => {
+            imagePopup.classList.remove('active');
+            document.body.style.overflow = ''; // Cho phép cuộn trang
+        });
+
+        imagePopup.addEventListener('click', (e) => {
+            if (e.target === imagePopup) {
+                imagePopup.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+            if (e.target === popupImage) {
+                e.stopPropagation();
+            }
+        });
+
+        // =========================================================================
+        // Xử lý nhạc nền chính (Background Music)
+        // =========================================================================
+        const backgroundMusic = document.getElementById('background-music');
+        const musicToggleButton = document.getElementById('music-toggle-btn');
+        const statusText = musicToggleButton ? musicToggleButton.querySelector('.status-text') : null; // Kiểm tra tồn tại
+
+        let isBackgroundMusicPlaying = false; 
+
+        if (musicToggleButton) { // Chỉ thực hiện nếu nút tồn tại
+            backgroundMusic.play().then(() => {
+                isBackgroundMusicPlaying = true;
+                musicToggleButton.classList.add('playing');
+                if (statusText) statusText.textContent = ' Tắt Nhạc';
+            }).catch(error => {
+                console.log('Autoplay nhạc nền bị chặn. Người dùng cần tương tác lần đầu.');
+                isBackgroundMusicPlaying = false;
+                musicToggleButton.classList.remove('playing');
+                if (statusText) statusText.textContent = ' Bật Nhạc';
+            });
+
+            musicToggleButton.addEventListener('click', () => {
+                if (isBackgroundMusicPlaying) {
+                    backgroundMusic.pause();
+                    musicToggleButton.classList.remove('playing');
+                    if (statusText) statusText.textContent = ' Bật Nhạc';
+                } else {
+                    backgroundMusic.play();
+                    musicToggleButton.classList.add('playing');
+                    if (statusText) statusText.textContent = ' Tắt Nhạc';
+                }
+                isBackgroundMusicPlaying = !isBackgroundMusicPlaying;
+            });
+        } else {
+            // Nếu nút không tồn tại, cố gắng phát nhạc tự động
+            backgroundMusic.play().then(() => {
+                isBackgroundMusicPlaying = true;
+            }).catch(error => {
+                console.log('Autoplay nhạc nền bị chặn và nút điều khiển không tồn tại. Nhạc không tự phát.');
+                isBackgroundMusicPlaying = false;
+            });
+        }
+
+
+        // =========================================================================
+        // Xử lý Popup "Đôi lời thì thầm" và nhạc đi kèm 
+        // =========================================================================
+        const whisperButton = document.getElementById('whisper-button');
+        const whisperPopup = document.getElementById('whisper-popup');
+        const whisperCloseButton = document.querySelector('.whisper-close-button');
+        const whisperMusic = document.getElementById('whisper-music');
+
+        let wasBackgroundMusicPlayingBeforeWhisper = false; 
+
+        whisperButton.addEventListener('click', () => {
+            if (isBackgroundMusicPlaying) {
+                backgroundMusic.pause();
+                wasBackgroundMusicPlayingBeforeWhisper = true;
+                if (musicToggleButton) { // Cập nhật trạng thái nút nếu nó tồn tại
+                    musicToggleButton.classList.remove('playing');
+                    if (statusText) statusText.textContent = ' Bật Nhạc';
+                }
+            } else {
+                wasBackgroundMusicPlayingBeforeWhisper = false;
+            }
+
+            whisperPopup.classList.add('active');
+            document.body.style.overflow = 'hidden'; 
+
+            whisperMusic.play().catch(error => {
+                console.log('Autoplay nhạc lời thì thầm bị chặn:', error);
+            });
+        });
+
+        whisperCloseButton.addEventListener('click', () => {
+            whisperPopup.classList.remove('active');
+            document.body.style.overflow = ''; 
+
+            whisperMusic.pause();
+            whisperMusic.currentTime = 0;
+
+            if (wasBackgroundMusicPlayingBeforeWhisper) {
+                backgroundMusic.play().then(() => {
+                    if (musicToggleButton) { // Cập nhật trạng thái nút nếu nó tồn tại
+                        musicToggleButton.classList.add('playing');
+                        if (statusText) statusText.textContent = ' Tắt Nhạc';
+                    }
+                }).catch(error => {
+                    console.log('Không thể tiếp tục phát nhạc nền chính sau khi đóng popup:', error);
+                    if (musicToggleButton) { // Cập nhật trạng thái nút nếu nó tồn tại
+                        musicToggleButton.classList.remove('playing');
+                        if (statusText) statusText.textContent = ' Bật Nhạc';
+                    }
+                });
+            }
+        });
+
+        whisperPopup.addEventListener('click', (e) => {
+            if (e.target === whisperPopup) {
+                whisperPopup.classList.remove('active');
+                document.body.style.overflow = '';
+
+                whisperMusic.pause();
+                whisperMusic.currentTime = 0;
+
+                if (wasBackgroundMusicPlayingBeforeWhisper) {
+                    backgroundMusic.play().then(() => {
+                        if (musicToggleButton) { // Cập nhật trạng thái nút nếu nó tồn tại
+                            musicToggleButton.classList.add('playing');
+                            if (statusText) statusText.textContent = ' Tắt Nhạc';
+                        }
+                    }).catch(error => {
+                        console.log('Không thể tiếp tục phát nhạc nền chính sau khi đóng popup (click ngoài):', error);
+                        if (musicToggleButton) { // Cập nhật trạng thái nút nếu nó tồn tại
+                            musicToggleButton.classList.remove('playing');
+                            if (statusText) statusText.textContent = ' Bật Nhạc';
+                        }
+                    });
+                }
+            }
+        });
+
+
+        // =========================================================================
+        // MỚI: HIỆU ỨNG CÁNH HOA RƠI VÀ BONG BÓNG
+        // =========================================================================
+        const effectContainer = document.querySelector('.effect-container');
+
+        // Hàm tạo một cánh hoa mới
+        function createPetal() {
+            const petal = document.createElement('div');
+            petal.classList.add('petal');
+            
+            // Chọn ngẫu nhiên loại cánh hoa (để có sự đa dạng)
+            const petalTypes = ['petal-pink', 'petal-white']; 
+            const randomType = petalTypes[Math.floor(Math.random() * petalTypes.length)];
+            petal.classList.add(randomType);
+
+            petal.style.left = `${Math.random() * 100}vw`; // Vị trí ngẫu nhiên từ trái sang phải
+            petal.style.animationDuration = `${Math.random() * 5 + 5}s`; // Thời gian rơi từ 5-10s
+            petal.style.animationDelay = `${Math.random() * -10}s`; // Delay âm để các cánh hoa xuất hiện ngay lập tức và liên tục
+            petal.style.opacity = `${Math.random() * 0.5 + 0.5}`; // Độ trong suốt từ 0.5 đến 1
+            petal.style.transform = `scale(${Math.random() * 0.5 + 0.5})`; // Kích thước từ 0.5 đến 1
+
+            effectContainer.appendChild(petal);
+
+            // Xóa cánh hoa khi nó rơi ra khỏi màn hình để tránh DOM overload
+            petal.addEventListener('animationend', () => {
+                petal.remove();
+            });
+        }
+
+        // Hàm tạo một bong bóng mới
+        function createBubble() {
+            const bubble = document.createElement('div');
+            bubble.classList.add('bubble');
+
+            bubble.style.left = `${Math.random() * 100}vw`;
+            bubble.style.animationDuration = `${Math.random() * 8 + 8}s`; // Bong bóng bay chậm hơn (8-16s)
+            bubble.style.animationDelay = `${Math.random() * -15}s`;
+            bubble.style.opacity = `${Math.random() * 0.4 + 0.2}`; // Bong bóng trong suốt hơn
+            bubble.style.width = bubble.style.height = `${Math.random() * 20 + 10}px`; // Kích thước bong bóng 10-30px
+
+            effectContainer.appendChild(bubble);
+
+            bubble.addEventListener('animationend', () => {
+                bubble.remove();
+            });
+        }
+
+        // Tạo hiệu ứng liên tục
+        // Bạn có thể điều chỉnh số lượng và tần suất tạo ra hiệu ứng
+        setInterval(createPetal, 600); // Tạo một cánh hoa mỗi 600ms
+        setInterval(createBubble, 1000); // Tạo một bong bóng mỗi 1000ms (1 giây)
+
+    </script>
+</body>
+</html>

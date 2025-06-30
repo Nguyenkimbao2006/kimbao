@@ -1,0 +1,739 @@
+/* Thiết lập chung */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+:root {
+    /* Bảng màu "nịnh mắt" hơn */
+    --color-primary-light: #fef0f7; /* Hồng phấn cực nhạt */
+    --color-primary-medium: #fcd5e9; /* Hồng phấn trung bình */
+    --color-primary-dark: #f8a0c4; /* Hồng phấn đậm hơn */
+    --color-accent-light: #e0f2f7; /* Xanh da trời nhạt */
+    --color-accent-medium: #a8dadc; /* Xanh ngọc dịu */
+    --color-text-dark: #3a3a3a; /* Gần đen */
+    --color-text-light: #6a6a6a; /* Xám nhạt */
+    --color-background-soft: #ffffff; /* Nền trắng tinh khiết */
+    --color-overlay-dark: rgba(0, 0, 0, 0.7);
+    --color-overlay-light: rgba(255, 255, 255, 0.3);
+    --color-whisper-bg: rgba(255, 255, 255, 0.95); /* Nền popup thì thầm, thêm mới */
+
+    --transition-fast: 0.25s;
+    --transition-medium: 0.5s;
+    --transition-slow: 0.8s;
+    --ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1); /* Mượt mà, nảy nhẹ */
+    --ease-in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955); /* Vào và ra đều */
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--color-background-soft);
+    color: var(--color-text-dark);
+    line-height: 1.7;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* Container chung để căn giữa nội dung */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2 {
+    font-family: 'Dancing Script', cursive;
+    text-align: center;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.05); /* Bóng nhẹ cho chữ */
+}
+
+h1 {
+    font-size: 4.8em;
+    color: white;
+    text-shadow: 4px 4px 8px rgba(0,0,0,0.4);
+}
+
+h2 {
+    font-size: 3.5em;
+    color: var(--color-primary-dark);
+    margin-top: 0; /* Đảm bảo không có margin top thừa */
+    padding-top: 40px; /* Thêm padding top để tạo khoảng cách với phần trên */
+}
+
+p {
+    font-size: 1.1em;
+    color: var(--color-text-light);
+    line-height: 1.8;
+}
+
+/* Header - Phần giới thiệu */
+.hero-section {
+    background: linear-gradient(145deg, var(--color-primary-medium), var(--color-primary-dark));
+    color: white;
+    text-align: center;
+    padding: 100px 20px 120px;
+    min-height: 65vh; /* Cao hơn một chút */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background-image: url('https://source.unsplash.com/random/1920x1080/?pastel,clouds,pink'); /* Ảnh nền phù hợp hơn */
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    border-bottom-left-radius: 50px; /* Bo góc dưới để chuyển cảnh mềm mại */
+    border-bottom-right-radius: 50px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2); /* Lớp phủ mờ hơn */
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+}
+
+.hero-section p {
+    font-size: 1.5em;
+    font-weight: 300;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+/* Background Shapes for Header */
+.background-shape {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.18; /* Sáng hơn một chút */
+    filter: blur(60px); /* Mờ hơn */
+    z-index: 0;
+    animation: float 18s ease-in-out infinite alternate; /* Thời gian animation dài hơn */
+}
+
+.shape-1 {
+    width: 280px;
+    height: 280px;
+    background-color: var(--color-accent-light);
+    top: 15%;
+    left: 12%;
+    animation-delay: 0s;
+}
+
+.shape-2 {
+    width: 400px;
+    height: 400px;
+    background-color: var(--color-primary-light);
+    bottom: 8%;
+    right: 18%;
+    animation-delay: 3s;
+}
+
+/* Gallery - Container chứa ảnh */
+.gallery-section {
+    padding: 60px 0 80px; /* Tăng padding dưới */
+    background: linear-gradient(to bottom, var(--color-background-soft) 0%, var(--color-primary-light) 100%);
+    position: relative;
+    overflow: hidden;
+    margin-top: -50px; /* Để section này chồng lên header một chút */
+    z-index: 1; /* Đảm bảo nó nằm trên header */
+    border-top-left-radius: 50px; /* Bo góc trên cho phần này */
+    border-top-right-radius: 50px;
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 35px; /* Khoảng cách ảnh lớn hơn */
+    padding: 40px 0; /* Tăng padding */
+}
+
+/* Từng mục ảnh */
+.image-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px; /* Bo góc nhiều hơn */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12); /* Đổ bóng mạnh hơn */
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid var(--color-primary-light); /* Viền nhẹ */
+    transition: transform 0.4s var(--ease-out-quint), box-shadow 0.4s var(--ease-out-quint), border-color 0.4s;
+    will-change: transform; /* Cho hiệu ứng Vanilla Tilt */
+}
+
+/* Vanilla Tilt sẽ tự thêm transform, nên ta sẽ bỏ transform:hover của mình */
+.image-item:hover {
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2); /* Đổ bóng sâu hơn */
+    border-color: var(--color-primary-dark); /* Đổi màu viền khi hover */
+}
+
+.image-item img {
+    width: 100%;
+    height: 350px; /* Chiều cao cố định lớn hơn cho ảnh */
+    object-fit: cover;
+    display: block;
+    /* Transition cho ảnh bên trong (sẽ không bị ảnh hưởng bởi Vanilla Tilt bên ngoài) */
+    transition: transform 0.6s var(--ease-out-quint);
+}
+
+.image-item:hover img {
+    transform: scale(1.12); /* Zoom ảnh nhiều hơn khi hover */
+}
+
+/* Overlay cho thông báo khen ngợi (chỉ hiện khi click) */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-overlay-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-medium) ease-in-out, visibility var(--transition-medium) ease-in-out;
+    border-radius: 20px; /* Khớp với bo góc ảnh */
+    text-align: center;
+    padding: 15px;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+.overlay .message {
+    color: white;
+    font-size: 1.8em;
+    font-weight: 600;
+    opacity: 0;
+    transform: translateY(40px); /* Bắt đầu từ dưới lên */
+    transition: opacity var(--transition-medium) ease, transform var(--transition-medium) ease;
+}
+
+/* Hiện overlay khi click (để kích hoạt popup) */
+.image-item:active .overlay {
+    opacity: 1;
+    visibility: visible;
+}
+.image-item:active .overlay .message {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Phần "Lời nhắn" */
+.message-section {
+    padding: 80px 0;
+    background: linear-gradient(145deg, var(--color-primary-medium), var(--color-primary-dark)); /* Gradient cho section này */
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    margin-top: 50px; /* Khoảng cách với phần trên */
+    border-top-left-radius: 50px; /* Bo góc trên */
+    border-top-right-radius: 50px;
+    box-shadow: 0 -10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.message-section h2 {
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+.special-message {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5em; /* Kích thước lớn hơn */
+    font-weight: 700;
+    max-width: 800px;
+    margin: 30px auto 40px;
+    line-height: 1.6;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.signature {
+    font-size: 1.3em;
+    font-weight: 500;
+    opacity: 0.9;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+/* Footer */
+.footer-section {
+    background: linear-gradient(145deg, var(--color-primary-dark), var(--color-primary-medium));
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    box-shadow: 0 -8px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Popup Ảnh chi tiết (Gallery Images) */
+.image-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-overlay-dark);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.6); /* Bắt đầu nhỏ hơn nhiều */
+    transition: opacity var(--transition-medium) ease, visibility var(--transition-medium) ease, transform var(--transition-medium) var(--ease-out-quint);
+}
+
+.image-popup.active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1); /* Phóng to ra */
+}
+
+.popup-image {
+    max-width: 80%; /* Chiếm ít không gian hơn */
+    max-height: 70%; /* Chiếm ít không gian hơn */
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    object-fit: contain;
+    transition: transform 0.3s ease-out;
+    background-color: white; /* Nền trắng cho ảnh trong popup */
+    padding: 5px; /* Padding để ảnh không sát viền */
+}
+
+.popup-message {
+    color: white;
+    font-size: 2.2em; /* Lớn hơn */
+    font-family: 'Dancing Script', cursive;
+    margin-top: 30px; /* Khoảng cách lớn hơn */
+    text-align: center;
+    padding: 0 30px;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.6);
+    animation: fadeInScale var(--transition-medium) ease-out 0.2s forwards;
+    opacity: 0;
+    transform: scale(0.9);
+}
+
+.close-button {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: white;
+    font-size: 50px; /* Lớn hơn */
+    cursor: pointer;
+    transition: transform var(--transition-fast) ease-in-out, color var(--transition-fast) ease;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.close-button:hover {
+    transform: scale(1.25) rotate(90deg); /* Phóng to và xoay nhiều hơn */
+    color: var(--color-accent-medium); /* Đổi màu khi hover */
+}
+
+/* Hiệu ứng Fade-in và Slide-in khi cuộn */
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px); /* Dịch chuyển nhiều hơn */
+    transition: opacity 1.2s var(--ease-out-quint), transform 1.2s var(--ease-out-quint); /* Thời gian dài hơn */
+    will-change: opacity, transform;
+}
+
+.fade-in.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-in-slide {
+    opacity: 0;
+    transform: translateY(60px); /* Bắt đầu từ dưới và trượt lên nhiều hơn */
+    transition: opacity 1.2s var(--ease-out-quint), transform 1.2s var(--ease-out-quint);
+    will-change: opacity, transform;
+}
+
+.fade-in-slide.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Keyframe Animations */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-60px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(60px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    33% { transform: translate(25px, 15px) rotate(5deg); }
+    66% { transform: translate(-15px, 25px) rotate(-5deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+@keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+
+/* ========================================================================= */
+/* Nút Bật/Tắt nhạc nền */
+.music-toggle-button {
+    position: fixed; /* Cố định vị trí */
+    bottom: 25px; /* Cách đáy 25px */
+    right: 25px; /* Cách phải 25px */
+    background-color: var(--color-primary-dark);
+    color: white;
+    border: none;
+    border-radius: 50px; /* Hình tròn */
+    padding: 12px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 1001; /* Đảm bảo nút nằm trên cùng */
+    outline: none; /* Bỏ viền khi focus */
+}
+
+.music-toggle-button:hover {
+    background-color: #d17a96; /* Màu đậm hơn khi hover */
+    transform: translateY(-3px);
+}
+
+.music-toggle-button i {
+    font-size: 1.2em;
+}
+
+/* Hiệu ứng nhấp nháy cho icon khi nhạc đang phát */
+.music-toggle-button.playing i {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+
+/* ========================================================================= */
+/* Nút "Đôi lời thì thầm" */
+.whisper-button {
+    position: fixed; /* Cố định vị trí */
+    bottom: 25px; /* Cùng hàng với nút nhạc, nhưng cách trái */
+    left: 25px; /* Cách trái 25px */
+    background-color: var(--color-accent-medium); /* Màu khác để dễ phân biệt */
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 1001;
+    outline: none;
+}
+
+.whisper-button:hover {
+    background-color: #7abac3; /* Màu đậm hơn khi hover */
+    transform: translateY(-3px);
+}
+
+.whisper-button i {
+    font-size: 1.2em;
+}
+
+/* ========================================================================= */
+/* Popup "Đôi lời thì thầm" */
+.whisper-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* Nền tối hơn, rõ ràng hơn */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1002; /* Cao hơn các popup khác */
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.8); /* Bắt đầu nhỏ hơn */
+    transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease-out;
+}
+
+.whisper-popup.active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+.whisper-content {
+    background-color: var(--color-whisper-bg); /* Nền trắng ngà hoặc hồng nhạt */
+    border-radius: 25px; /* Bo góc mềm mại */
+    padding: 40px;
+    max-width: 700px; /* Chiều rộng tối đa */
+    max-height: 85vh; /* Chiều cao tối đa theo màn hình */
+    overflow-y: auto; /* Cuộn nếu nội dung dài */
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); /* Đổ bóng sâu hơn */
+    text-align: center; /* Căn giữa nội dung */
+    animation: fadeInScale 0.5s ease-out; /* Hiệu ứng xuất hiện */
+}
+
+.whisper-content h3 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3em;
+    color: var(--color-primary-dark);
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.whisper-text {
+    font-size: 1.1em;
+    color: var(--color-text-dark);
+    line-height: 1.8;
+    text-align: justify; /* Căn đều hai bên */
+    margin-bottom: 30px;
+    padding: 0 15px; /* Padding nhẹ hai bên */
+}
+
+.whisper-text p {
+    margin-bottom: 1em; /* Khoảng cách giữa các đoạn văn */
+    color: var(--color-text-dark); /* Đảm bảo màu chữ đúng */
+}
+
+.signature-whisper {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+    margin-top: 30px;
+    text-align: right; /* Ký tên căn phải */
+    padding-right: 20px;
+}
+
+/* Nút đóng của popup lời thì thầm (sử dụng lại class close-button nhưng có thêm biến thể) */
+.whisper-close-button {
+    color: var(--color-primary-dark); /* Màu khác cho nút đóng popup này */
+    top: 15px;
+    right: 20px;
+    font-size: 45px; /* Nhỏ hơn nút đóng ảnh */
+    text-shadow: none; /* Bỏ bóng cho chữ */
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.whisper-close-button:hover {
+    color: white;
+    background-color: var(--color-primary-dark);
+    transform: scale(1.1) rotate(90deg);
+}
+
+
+/* Tối ưu cho điện thoại (Responsive Design) */
+@media (max-width: 768px) {
+    h1 { font-size: 3.2em; }
+    h2 { font-size: 2.2em; margin-bottom: 20px; padding-top: 30px; }
+    p { font-size: 0.95em; }
+    .hero-section { padding: 80px 15px 100px; min-height: 45vh; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px; }
+    .hero-section p { font-size: 1.1em; }
+    .background-shape { display: none; }
+
+    .gallery-section { padding: 40px 0 60px; margin-top: -30px; border-top-left-radius: 30px; border-top-right-radius: 30px; }
+    .gallery-container { grid-template-columns: 1fr; gap: 25px; padding: 30px 0; }
+    .image-item img { height: 260px; }
+
+    .message-section { padding: 60px 0; margin-top: 40px; border-top-left-radius: 30px; border-top-right-radius: 30px; }
+    .message-section h2 { font-size: 2em; }
+    .special-message { font-size: 1.8em; margin: 25px auto 30px; }
+    .signature { font-size: 1em; }
+
+    .footer-section { padding: 30px 20px; border-top-left-radius: 20px; border-top-right-radius: 20px; }
+
+    .popup-image { max-height: 65%; max-width: 90%; }
+    .popup-message { font-size: 1.8em; margin-top: 20px; }
+    .close-button { font-size: 40px; top: 20px; right: 30px; }
+
+    /* Nút nhạc và thì thầm trên di động */
+    .music-toggle-button, .whisper-button {
+        bottom: 15px;
+        padding: 10px 15px;
+        font-size: 0.9em;
+        gap: 5px;
+    }
+    .music-toggle-button { right: 15px; }
+    .whisper-button { left: 15px; }
+
+    /* Popup Lời thì thầm trên di động */
+    .whisper-content {
+        padding: 25px;
+        max-width: 90%;
+        max-height: 90vh;
+        border-radius: 15px;
+    }
+    .whisper-content h3 {
+        font-size: 2em;
+        margin-bottom: 15px;
+    }
+    .whisper-text {
+        font-size: 1em;
+        padding: 0 10px;
+    }
+    .signature-whisper {
+        font-size: 1.5em;
+        padding-right: 15px;
+    }
+    .whisper-close-button {
+        font-size: 35px;
+        width: 45px;
+        height: 45px;
+        top: 10px;
+        right: 15px;
+    }
+}
+
+
+/* ========================================================================= */
+/* MỚI: HIỆU ỨNG TRANG TRÍ (HOA LÁ, BONG BÓNG) */
+/* ========================================================================= */
+
+/* Container cho hiệu ứng */
+.effect-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Rất quan trọng: Cho phép click xuyên qua */
+    z-index: 999; /* Đảm bảo nó nằm trên nội dung nhưng dưới popup */
+    overflow: hidden; /* Ngăn chặn thanh cuộn nếu các phần tử ra ngoài */
+}
+
+/* Cánh hoa chung */
+.petal {
+    position: absolute;
+    width: 25px; /* Kích thước cánh hoa */
+    height: 25px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: fall linear infinite; /* Animation rơi */
+    border-radius: 50%; /* Để làm hiệu ứng tròn nếu không có ảnh */
+}
+
+/* Các biến thể cánh hoa (có thể dùng background-image cho ảnh cánh hoa thật) */
+/* Nếu bạn có ảnh cánh hoa riêng (ví dụ: petal_pink.png, petal_white.png), hãy thay thế URL */
+.petal-pink {
+    background-color: rgba(255, 192, 203, 0.7); /* Hồng phấn */
+    /* background-image: url('images/petal_pink.png'); */ /* Nếu có ảnh */
+    box-shadow: 0 0 5px rgba(255, 192, 203, 0.5); /* Bóng nhẹ */
+}
+
+.petal-white {
+    background-color: rgba(255, 255, 255, 0.8); /* Trắng */
+    /* background-image: url('images/petal_white.png'); */ /* Nếu có ảnh */
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* Bóng nhẹ */
+}
+
+/* Animation cho cánh hoa rơi và xoay */
+@keyframes fall {
+    0% {
+        transform: translate3d(0, -10vh, 0) rotateZ(0deg) rotateY(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate3d(calc(var(--rand-x) * 1px), 110vh, 0) rotateZ(720deg) rotateY(360deg);
+        opacity: 0;
+    }
+}
+
+/* Bong bóng khí */
+.bubble {
+    position: absolute;
+    background-color: rgba(173, 216, 230, 0.5); /* Xanh dương nhạt trong suốt */
+    border-radius: 50%;
+    box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.7), 0 0 10px rgba(173, 216, 230, 0.8); /* Hiệu ứng lấp lánh */
+    animation: bubble-float linear infinite;
+}
+
+/* Animation cho bong bóng bay lên */
+@keyframes bubble-float {
+    0% {
+        transform: translateY(100vh) translateX(0);
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(-10vh) translateX(calc(var(--rand-x) * 1px));
+        opacity: 0;
+    }
+}
+
+/* Thêm một số hiệu ứng hover/active nhỏ cho các phần tử tương tác */
+/* Ví dụ: Cho các đoạn văn bản chính */
+.special-message:hover {
+    color: var(--color-background-soft);
+    text-shadow: 0 0 15px var(--color-accent-light);
+    transform: scale(1.02);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Cho các tiêu đề chính */
+h1:hover {
+    transform: scale(1.01);
+    text-shadow: 6px 6px 12px rgba(0,0,0,0.6);
+    transition: all 0.3s ease;
+}
+
+h2:hover {
+    color: var(--color-accent-medium);
+    transform: scale(1.02);
+    transition: all 0.3s ease;
+}
+
+/* Cải thiện hiệu ứng cho nút */
+button {
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Hiệu ứng nảy */
+}
+
+button:active {
+    transform: translateY(1px); /* Ấn xuống khi click */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
